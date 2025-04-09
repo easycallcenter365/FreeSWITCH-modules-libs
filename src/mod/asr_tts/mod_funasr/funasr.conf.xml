@@ -1,0 +1,12 @@
+<configuration name="funasr.conf" description="funasr asr configuration">
+  <settings>
+      <param name="server_url" value="ws://192.168.66.201:2701" />
+	  <param name="ws_conn_timeout_ms" value="9000" />
+	  <param name="sample_rate" value="16000" />
+	  <param name="asr_mode" value="online" />
+	  <param name="log_asr_response" value="1" />
+	  <param name="Parse-Json" value="1" />
+	  <param name="ws_conn_retry_max" value="1" />
+	  <param name="write_pcm_enable" value="0" />	  
+  </settings>
+</configuration>

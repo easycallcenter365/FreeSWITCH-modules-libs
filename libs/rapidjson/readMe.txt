@@ -1,0 +1,1 @@
+download rapidjson from https://github.com/Tencent/rapidjson

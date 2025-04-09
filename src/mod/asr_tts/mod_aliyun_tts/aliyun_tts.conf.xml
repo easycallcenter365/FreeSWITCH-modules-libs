@@ -1,0 +1,15 @@
+<configuration name="aliyun_tts.conf" description="aliyun tts configuration">
+  <settings>
+      <param name="server_url" value="wss://nls-gateway-cn-beijing.aliyuncs.com/ws/v1" />
+      <!-- server_url ref:   https://help.aliyun.com/zh/isi/developer-reference/restful-api-3  -->
+
+	  <param name="ws_conn_timeout_ms" value="9000" />
+	  <param name="sample_rate" value="16000" />
+	  <param name="access_key_id" value="Replace-With-Your-Own-XXXXXXXX" />
+	  <param name="access_key_secret" value="Replace-With-Your-Own-XXXXXXXX" />
+	  <param name="app_key" value="Replace-With-Your-Own-XXXXXXXX" />
+	  <param name="voice_name" value="aixia" />
+	  <param name="voice_volume" value="50" />
+	  <param name="write_pcm_enable" value="0" />
+  </settings>
+</configuration>

@@ -1,0 +1,14 @@
+<configuration name="xunfei_asr.conf" description="xunfei_asr configuration">
+  <settings>
+      <param name="server_url" value="wss://rtasr.xfyun.cn/v1/ws" />
+	  <param name="App-ID" value="YOUR_OWN_APPID" />
+	  <param name="API-Secret" value="" />
+	  <param name="API-Key" value="YOUR_OWN_API_KEY" />	  
+	  <param name="ws_conn_timeout_ms" value="9000" />
+	  <param name="sample_rate" value="16000" />
+	  <param name="log_asr_response" value="0" />
+	  <param name="Parse-Json" value="1" />
+	  <param name="ws_conn_retry_max" value="1" />
+	  <param name="write_pcm_enable" value="1" />	  
+  </settings>
+</configuration>

@@ -1,0 +1,539 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{960c09c4-d08d-4e07-8351-b45ee47cfcd1}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>libhv</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{D51BCBC9-82E9-4017-911E-C93873C4EA2B}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\git\fs110\freeswitch-1.10.6\fs1.10.8\freeswitch-1.10.8.-release\src\include;D:\git\fs110\freeswitch-1.10.6\fs1.10.8\freeswitch-1.10.8.-release\libs\libhv-master\master\libhv\include\hv;D:\git\fs110\freeswitch-1.10.6\fs1.10.8\freeswitch-1.10.8.-release\libs\spdlog;$(IncludePath)</IncludePath>
+    <CopyAdditionalIncludes>true</CopyAdditionalIncludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClInclude Include="base\array.h" />
+    <ClInclude Include="base\hatomic.h" />
+    <ClInclude Include="base\hbase.h" />
+    <ClInclude Include="base\hbuf.h" />
+    <ClInclude Include="base\hdef.h" />
+    <ClInclude Include="base\heap.h" />
+    <ClInclude Include="base\hendian.h" />
+    <ClInclude Include="base\herr.h" />
+    <ClInclude Include="base\hlog.h" />
+    <ClInclude Include="base\hmain.h" />
+    <ClInclude Include="base\hmath.h" />
+    <ClInclude Include="base\hmutex.h" />
+    <ClInclude Include="base\hplatform.h" />
+    <ClInclude Include="base\hproc.h" />
+    <ClInclude Include="base\hsocket.h" />
+    <ClInclude Include="base\hsysinfo.h" />
+    <ClInclude Include="base\hthread.h" />
+    <ClInclude Include="base\htime.h" />
+    <ClInclude Include="base\hversion.h" />
+    <ClInclude Include="base\list.h" />
+    <ClInclude Include="base\netinet.h" />
+    <ClInclude Include="base\queue.h" />
+    <ClInclude Include="base\rbtree.h" />
+    <ClInclude Include="cpputil\hasync.h" />
+    <ClInclude Include="cpputil\hdir.h" />
+    <ClInclude Include="cpputil\hfile.h" />
+    <ClInclude Include="cpputil\hmap.h" />
+    <ClInclude Include="cpputil\hobjectpool.h" />
+    <ClInclude Include="cpputil\hpath.h" />
+    <ClInclude Include="cpputil\hscope.h" />
+    <ClInclude Include="cpputil\hstring.h" />
+    <ClInclude Include="cpputil\hthreadpool.h" />
+    <ClInclude Include="cpputil\hurl.h" />
+    <ClInclude Include="cpputil\ifconfig.h" />
+    <ClInclude Include="cpputil\iniparser.h" />
+    <ClInclude Include="cpputil\json.hpp" />
+    <ClInclude Include="cpputil\singleton.h" />
+    <ClInclude Include="cpputil\ThreadLocalStorage.h" />
+    <ClInclude Include="event\hevent.h" />
+    <ClInclude Include="event\hloop.h" />
+    <ClInclude Include="event\iowatcher.h" />
+    <ClInclude Include="event\kcp\hkcp.h" />
+    <ClInclude Include="event\kcp\ikcp.h" />
+    <ClInclude Include="event\nlog.h" />
+    <ClInclude Include="event\overlapio.h" />
+    <ClInclude Include="event\rudp.h" />
+    <ClInclude Include="event\unpack.h" />
+    <ClInclude Include="event\wepoll\wepoll.h" />
+    <ClInclude Include="evpp\Buffer.h" />
+    <ClInclude Include="evpp\Channel.h" />
+    <ClInclude Include="evpp\Event.h" />
+    <ClInclude Include="evpp\EventLoop.h" />
+    <ClInclude Include="evpp\EventLoopThread.h" />
+    <ClInclude Include="evpp\EventLoopThreadPool.h" />
+    <ClInclude Include="evpp\Status.h" />
+    <ClInclude Include="evpp\TcpClient.h" />
+    <ClInclude Include="evpp\TcpServer.h" />
+    <ClInclude Include="evpp\TimerThread.h" />
+    <ClInclude Include="evpp\UdpClient.h" />
+    <ClInclude Include="evpp\UdpServer.h" />
+    <ClInclude Include="examples\consul\consul.h" />
+    <ClInclude Include="examples\httpd\handler.h" />
+    <ClInclude Include="examples\httpd\router.h" />
+    <ClInclude Include="examples\jsonrpc\cJSON.h" />
+    <ClInclude Include="examples\jsonrpc\handler.h" />
+    <ClInclude Include="examples\jsonrpc\router.h" />
+    <ClInclude Include="examples\nmap\nmap.h" />
+    <ClInclude Include="examples\protorpc\handler\calc.h" />
+    <ClInclude Include="examples\protorpc\handler\handler.h" />
+    <ClInclude Include="examples\protorpc\handler\login.h" />
+    <ClInclude Include="examples\protorpc\protorpc.h" />
+    <ClInclude Include="examples\protorpc\router.h" />
+    <ClInclude Include="hconfig.h" />
+    <ClInclude Include="hexport.h" />
+    <ClInclude Include="http\client\AsyncHttpClient.h" />
+    <ClInclude Include="http\client\axios.h" />
+    <ClInclude Include="http\client\HttpClient.h" />
+    <ClInclude Include="http\client\requests.h" />
+    <ClInclude Include="http\client\WebSocketClient.h" />
+    <ClInclude Include="http\grpcdef.h" />
+    <ClInclude Include="http\Http1Parser.h" />
+    <ClInclude Include="http\http2def.h" />
+    <ClInclude Include="http\Http2Parser.h" />
+    <ClInclude Include="http\httpdef.h" />
+    <ClInclude Include="http\HttpMessage.h" />
+    <ClInclude Include="http\HttpParser.h" />
+    <ClInclude Include="http\http_content.h" />
+    <ClInclude Include="http\http_parser.h" />
+    <ClInclude Include="http\multipart_parser.h" />
+    <ClInclude Include="http\server\FileCache.h" />
+    <ClInclude Include="http\server\HttpContext.h" />
+    <ClInclude Include="http\server\HttpHandler.h" />
+    <ClInclude Include="http\server\HttpMiddleware.h" />
+    <ClInclude Include="http\server\HttpResponseWriter.h" />
+    <ClInclude Include="http\server\HttpServer.h" />
+    <ClInclude Include="http\server\HttpService.h" />
+    <ClInclude Include="http\server\http_page.h" />
+    <ClInclude Include="http\server\WebSocketServer.h" />
+    <ClInclude Include="http\WebSocketChannel.h" />
+    <ClInclude Include="http\WebSocketParser.h" />
+    <ClInclude Include="http\websocket_parser.h" />
+    <ClInclude Include="http\wsdef.h" />
+    <ClInclude Include="hv.h" />
+    <ClInclude Include="include\hv\AsyncHttpClient.h" />
+    <ClInclude Include="include\hv\axios.h" />
+    <ClInclude Include="include\hv\base64.h" />
+    <ClInclude Include="include\hv\Buffer.h" />
+    <ClInclude Include="include\hv\Channel.h" />
+    <ClInclude Include="include\hv\Event.h" />
+    <ClInclude Include="include\hv\EventLoop.h" />
+    <ClInclude Include="include\hv\EventLoopThread.h" />
+    <ClInclude Include="include\hv\EventLoopThreadPool.h" />
+    <ClInclude Include="include\hv\hasync.h" />
+    <ClInclude Include="include\hv\hatomic.h" />
+    <ClInclude Include="include\hv\hbase.h" />
+    <ClInclude Include="include\hv\hbuf.h" />
+    <ClInclude Include="include\hv\hconfig.h" />
+    <ClInclude Include="include\hv\hdef.h" />
+    <ClInclude Include="include\hv\hdir.h" />
+    <ClInclude Include="include\hv\hendian.h" />
+    <ClInclude Include="include\hv\herr.h" />
+    <ClInclude Include="include\hv\hexport.h" />
+    <ClInclude Include="include\hv\hfile.h" />
+    <ClInclude Include="include\hv\hlog.h" />
+    <ClInclude Include="include\hv\hloop.h" />
+    <ClInclude Include="include\hv\hmain.h" />
+    <ClInclude Include="include\hv\hmap.h" />
+    <ClInclude Include="include\hv\hmath.h" />
+    <ClInclude Include="include\hv\hmutex.h" />
+    <ClInclude Include="include\hv\hobjectpool.h" />
+    <ClInclude Include="include\hv\hpath.h" />
+    <ClInclude Include="include\hv\hplatform.h" />
+    <ClInclude Include="include\hv\hproc.h" />
+    <ClInclude Include="include\hv\hscope.h" />
+    <ClInclude Include="include\hv\hsocket.h" />
+    <ClInclude Include="include\hv\hssl.h" />
+    <ClInclude Include="include\hv\hstring.h" />
+    <ClInclude Include="include\hv\hsysinfo.h" />
+    <ClInclude Include="include\hv\hthread.h" />
+    <ClInclude Include="include\hv\hthreadpool.h" />
+    <ClInclude Include="include\hv\htime.h" />
+    <ClInclude Include="include\hv\HttpClient.h" />
+    <ClInclude Include="include\hv\HttpContext.h" />
+    <ClInclude Include="include\hv\httpdef.h" />
+    <ClInclude Include="include\hv\HttpMessage.h" />
+    <ClInclude Include="include\hv\HttpParser.h" />
+    <ClInclude Include="include\hv\HttpResponseWriter.h" />
+    <ClInclude Include="include\hv\HttpServer.h" />
+    <ClInclude Include="include\hv\HttpService.h" />
+    <ClInclude Include="include\hv\http_content.h" />
+    <ClInclude Include="include\hv\hurl.h" />
+    <ClInclude Include="include\hv\hv.h" />
+    <ClInclude Include="include\hv\hversion.h" />
+    <ClInclude Include="include\hv\ifconfig.h" />
+    <ClInclude Include="include\hv\iniparser.h" />
+    <ClInclude Include="include\hv\json.hpp" />
+    <ClInclude Include="include\hv\md5.h" />
+    <ClInclude Include="include\hv\nlog.h" />
+    <ClInclude Include="include\hv\requests.h" />
+    <ClInclude Include="include\hv\sha1.h" />
+    <ClInclude Include="include\hv\singleton.h" />
+    <ClInclude Include="include\hv\Status.h" />
+    <ClInclude Include="include\hv\TcpClient.h" />
+    <ClInclude Include="include\hv\TcpServer.h" />
+    <ClInclude Include="include\hv\ThreadLocalStorage.h" />
+    <ClInclude Include="include\hv\UdpClient.h" />
+    <ClInclude Include="include\hv\UdpServer.h" />
+    <ClInclude Include="include\hv\WebSocketChannel.h" />
+    <ClInclude Include="include\hv\WebSocketClient.h" />
+    <ClInclude Include="include\hv\WebSocketParser.h" />
+    <ClInclude Include="include\hv\WebSocketServer.h" />
+    <ClInclude Include="include\hv\wsdef.h" />
+    <ClInclude Include="misc\grpc_server.h" />
+    <ClInclude Include="misc\win32_getopt.h" />
+    <ClInclude Include="mqtt\mqtt_client.h" />
+    <ClInclude Include="mqtt\mqtt_protocol.h" />
+    <ClInclude Include="out\build\x64-Debug\CMakeFiles\ShowIncludes\foo.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\AsyncHttpClient.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\axios.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\base64.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\Buffer.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\Channel.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\Event.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\EventLoop.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\EventLoopThread.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\EventLoopThreadPool.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hasync.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hatomic.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hbase.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hbuf.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hconfig.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hdef.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hdir.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hendian.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\herr.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hexport.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hfile.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hlog.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hloop.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hmain.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hmap.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hmath.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hmutex.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hobjectpool.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hpath.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hplatform.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hproc.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hscope.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hsocket.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hssl.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hstring.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hsysinfo.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hthread.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hthreadpool.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\htime.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\HttpClient.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\HttpContext.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\httpdef.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\HttpMessage.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\HttpParser.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\HttpResponseWriter.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\HttpServer.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\HttpService.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\http_content.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hurl.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hv.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\hversion.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\ifconfig.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\iniparser.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\json.hpp" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\md5.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\nlog.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\requests.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\sha1.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\singleton.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\Status.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\TcpClient.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\TcpServer.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\ThreadLocalStorage.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\UdpClient.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\UdpServer.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\WebSocketChannel.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\WebSocketClient.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\WebSocketParser.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\WebSocketServer.h" />
+    <ClInclude Include="out\build\x64-Debug\include\hv\wsdef.h" />
+    <ClInclude Include="protocol\dns.h" />
+    <ClInclude Include="protocol\ftp.h" />
+    <ClInclude Include="protocol\icmp.h" />
+    <ClInclude Include="protocol\smtp.h" />
+    <ClInclude Include="ssl\hssl.h" />
+    <ClInclude Include="util\base64.h" />
+    <ClInclude Include="util\md5.h" />
+    <ClInclude Include="util\sha1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base\hbase.c" />
+    <ClCompile Include="base\herr.c" />
+    <ClCompile Include="base\hlog.c" />
+    <ClCompile Include="base\hmain.c" />
+    <ClCompile Include="base\hsocket.c" />
+    <ClCompile Include="base\htime.c" />
+    <ClCompile Include="base\hversion.c" />
+    <ClCompile Include="base\rbtree.c" />
+    <ClCompile Include="cpputil\hasync.cpp" />
+    <ClCompile Include="cpputil\hdir.cpp" />
+    <ClCompile Include="cpputil\hpath.cpp" />
+    <ClCompile Include="cpputil\hstring.cpp" />
+    <ClCompile Include="cpputil\hurl.cpp" />
+    <ClCompile Include="cpputil\ifconfig.cpp" />
+    <ClCompile Include="cpputil\iniparser.cpp" />
+    <ClCompile Include="cpputil\RAII.cpp" />
+    <ClCompile Include="cpputil\ThreadLocalStorage.cpp" />
+    <ClCompile Include="echo-servers\asio_echo.cpp" />
+    <ClCompile Include="echo-servers\libevent_echo.c" />
+    <ClCompile Include="echo-servers\libev_echo.c" />
+    <ClCompile Include="echo-servers\libhv_echo.c" />
+    <ClCompile Include="echo-servers\libuv_echo.c" />
+    <ClCompile Include="echo-servers\muduo_echo.cpp" />
+    <ClCompile Include="echo-servers\pingpong_client.cpp" />
+    <ClCompile Include="echo-servers\poco_echo.cpp" />
+    <ClCompile Include="event\epoll.c" />
+    <ClCompile Include="event\evport.c" />
+    <ClCompile Include="event\hevent.c" />
+    <ClCompile Include="event\hloop.c" />
+    <ClCompile Include="event\iocp.c" />
+    <ClCompile Include="event\kcp\hkcp.c" />
+    <ClCompile Include="event\kcp\ikcp.c" />
+    <ClCompile Include="event\kqueue.c" />
+    <ClCompile Include="event\nio.c" />
+    <ClCompile Include="event\nlog.c" />
+    <ClCompile Include="event\noevent.c" />
+    <ClCompile Include="event\overlapio.c" />
+    <ClCompile Include="event\poll.c" />
+    <ClCompile Include="event\rudp.c" />
+    <ClCompile Include="event\select.c" />
+    <ClCompile Include="event\unpack.c" />
+    <ClCompile Include="event\wepoll\wepoll.c" />
+    <ClCompile Include="evpp\EventLoopThreadPool_test.cpp" />
+    <ClCompile Include="evpp\EventLoopThread_test.cpp" />
+    <ClCompile Include="evpp\EventLoop_test.cpp" />
+    <ClCompile Include="evpp\TcpClientEventLoop_test.cpp" />
+    <ClCompile Include="evpp\TcpClient_test.cpp" />
+    <ClCompile Include="evpp\TcpServer_test.cpp" />
+    <ClCompile Include="evpp\TimerThread_test.cpp" />
+    <ClCompile Include="evpp\UdpClient_test.cpp" />
+    <ClCompile Include="evpp\UdpServer_test.cpp" />
+    <ClCompile Include="examples\consul\consul.cpp" />
+    <ClCompile Include="examples\consul\main.cpp" />
+    <ClCompile Include="examples\curl.cpp" />
+    <ClCompile Include="examples\hloop_test.c" />
+    <ClCompile Include="examples\hmain_test.cpp" />
+    <ClCompile Include="examples\htimer_test.c" />
+    <ClCompile Include="examples\httpd\handler.cpp" />
+    <ClCompile Include="examples\httpd\httpd.cpp" />
+    <ClCompile Include="examples\httpd\router.cpp" />
+    <ClCompile Include="examples\http_client_test.cpp" />
+    <ClCompile Include="examples\http_server_test.cpp" />
+    <ClCompile Include="examples\jsonrpc\cJSON.c" />
+    <ClCompile Include="examples\jsonrpc\jsonrpc_client.c" />
+    <ClCompile Include="examples\jsonrpc\jsonrpc_server.c" />
+    <ClCompile Include="examples\mqtt\mqtt_client_test.cpp" />
+    <ClCompile Include="examples\mqtt\mqtt_pub.c" />
+    <ClCompile Include="examples\mqtt\mqtt_sub.c" />
+    <ClCompile Include="examples\multi-thread\multi-acceptor-processes.c" />
+    <ClCompile Include="examples\multi-thread\multi-acceptor-threads.c" />
+    <ClCompile Include="examples\multi-thread\one-acceptor-multi-workers.c" />
+    <ClCompile Include="examples\nc.c" />
+    <ClCompile Include="examples\nmap\main.cpp" />
+    <ClCompile Include="examples\nmap\nmap.cpp" />
+    <ClCompile Include="examples\protorpc\protorpc.c" />
+    <ClCompile Include="examples\protorpc\protorpc_client.cpp" />
+    <ClCompile Include="examples\protorpc\protorpc_server.cpp" />
+    <ClCompile Include="examples\rnnoise_server.cpp" />
+    <ClCompile Include="examples\socks5_proxy_server.c" />
+    <ClCompile Include="examples\tcp_chat_server.c" />
+    <ClCompile Include="examples\tcp_client_test.c" />
+    <ClCompile Include="examples\tcp_echo_server.c" />
+    <ClCompile Include="examples\tcp_proxy_server.c" />
+    <ClCompile Include="examples\tinyhttpd.c" />
+    <ClCompile Include="examples\tinyproxyd.c" />
+    <ClCompile Include="examples\udp_echo_server.c" />
+    <ClCompile Include="examples\udp_proxy_server.c" />
+    <ClCompile Include="examples\websocket_client_test.cpp" />
+    <ClCompile Include="examples\websocket_server_test.cpp" />
+    <ClCompile Include="examples\wget.cpp" />
+    <ClCompile Include="examples\wrk.cpp" />
+    <ClCompile Include="http\client\AsyncHttpClient.cpp" />
+    <ClCompile Include="http\client\HttpClient.cpp" />
+    <ClCompile Include="http\client\WebSocketClient.cpp" />
+    <ClCompile Include="http\Http1Parser.cpp" />
+    <ClCompile Include="http\Http2Parser.cpp" />
+    <ClCompile Include="http\httpdef.c" />
+    <ClCompile Include="http\HttpMessage.cpp" />
+    <ClCompile Include="http\HttpParser.cpp" />
+    <ClCompile Include="http\http_content.cpp" />
+    <ClCompile Include="http\http_parser.c" />
+    <ClCompile Include="http\multipart_parser.c" />
+    <ClCompile Include="http\server\FileCache.cpp" />
+    <ClCompile Include="http\server\HttpHandler.cpp" />
+    <ClCompile Include="http\server\HttpMiddleware.cpp" />
+    <ClCompile Include="http\server\HttpResponseWriter.cpp" />
+    <ClCompile Include="http\server\HttpServer.cpp" />
+    <ClCompile Include="http\server\HttpService.cpp" />
+    <ClCompile Include="http\server\http_page.cpp" />
+    <ClCompile Include="http\WebSocketChannel.cpp" />
+    <ClCompile Include="http\WebSocketParser.cpp" />
+    <ClCompile Include="http\websocket_parser.c" />
+    <ClCompile Include="http\wsdef.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mqtt\mqtt_client.c" />
+    <ClCompile Include="mqtt\mqtt_protocol.c" />
+    <ClCompile Include="out\build\x64-Debug\CMakeFiles\3.28.0-msvc1\CompilerIdCXX\CMakeCXXCompilerId.cpp" />
+    <ClCompile Include="out\build\x64-Debug\CMakeFiles\3.28.0-msvc1\CompilerIdC\CMakeCCompilerId.c" />
+    <ClCompile Include="out\build\x64-Debug\CMakeFiles\ShowIncludes\main.c" />
+    <ClCompile Include="protocol\dns.c" />
+    <ClCompile Include="protocol\ftp.c" />
+    <ClCompile Include="protocol\icmp.c" />
+    <ClCompile Include="protocol\smtp.c" />
+    <ClCompile Include="ssl\appletls.c" />
+    <ClCompile Include="ssl\gnutls.c" />
+    <ClCompile Include="ssl\hssl.c" />
+    <ClCompile Include="ssl\mbedtls.c" />
+    <ClCompile Include="ssl\nossl.c" />
+    <ClCompile Include="ssl\openssl.c" />
+    <ClCompile Include="ssl\wintls.c" />
+    <ClCompile Include="unittest\base64_test.c" />
+    <ClCompile Include="unittest\connect_test.c" />
+    <ClCompile Include="unittest\date_test.c" />
+    <ClCompile Include="unittest\defer_test.cpp" />
+    <ClCompile Include="unittest\ftp_test.c" />
+    <ClCompile Include="unittest\hatomic_test.c" />
+    <ClCompile Include="unittest\hatomic_test.cpp" />
+    <ClCompile Include="unittest\hbase_test.c" />
+    <ClCompile Include="unittest\hmutex_test.c" />
+    <ClCompile Include="unittest\hpath_test.cpp" />
+    <ClCompile Include="unittest\hstring_test.cpp" />
+    <ClCompile Include="unittest\hthread_test.cpp" />
+    <ClCompile Include="unittest\hurl_test.cpp" />
+    <ClCompile Include="unittest\ifconfig_test.cpp" />
+    <ClCompile Include="unittest\listdir_test.cpp" />
+    <ClCompile Include="unittest\md5_test.c" />
+    <ClCompile Include="unittest\mkdir_test.c" />
+    <ClCompile Include="unittest\nslookup_test.c" />
+    <ClCompile Include="unittest\objectpool_test.cpp" />
+    <ClCompile Include="unittest\ping_test.c" />
+    <ClCompile Include="unittest\rbtree_test.c" />
+    <ClCompile Include="unittest\rmdir_test.c" />
+    <ClCompile Include="unittest\sendmail_test.c" />
+    <ClCompile Include="unittest\sha1_test.c" />
+    <ClCompile Include="unittest\sizeof_test.cpp" />
+    <ClCompile Include="unittest\socketpair_test.c" />
+    <ClCompile Include="unittest\synchronized_test.cpp" />
+    <ClCompile Include="unittest\threadpool_test.cpp" />
+    <ClCompile Include="unittest\webbench.c" />
+    <ClCompile Include="util\base64.c" />
+    <ClCompile Include="util\md5.c" />
+    <ClCompile Include="util\sha1.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include=".travis.yml" />
+    <None Include="BUILD.md" />
+    <None Include="config.ini" />
+    <None Include="config.mk" />
+    <None Include="configure" />
+    <None Include="etc\hmain_test.conf" />
+    <None Include="etc\httpd.conf" />
+    <None Include="etc\nginx.conf" />
+    <None Include="etc\rnnoise_server.conf" />
+    <None Include="examples\README.md" />
+    <None Include="getting_started.sh" />
+    <None Include="hconfig.h.in" />
+    <None Include="html\downloads\中文.html" />
+    <None Include="html\error.html" />
+    <None Include="html\EventSource.html" />
+    <None Include="html\index.html" />
+    <None Include="html\WebSocket.html" />
+    <None Include="LICENSE" />
+    <None Include="Makefile" />
+    <None Include="Makefile.in" />
+    <None Include="Makefile.vars" />
+    <None Include="out\build\x64-Debug\CMakeFiles\3.28.0-msvc1\CMakeDetermineCompilerABI_C.bin" />
+    <None Include="out\build\x64-Debug\CMakeFiles\3.28.0-msvc1\CMakeDetermineCompilerABI_CXX.bin" />
+    <None Include="README-CN.md" />
+    <None Include="README.md" />
+    <None Include="TREE.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
+  </ItemGroup>
+  <ItemDefinitionGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

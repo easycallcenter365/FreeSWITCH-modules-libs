@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libhv-master\base\hbase.c" />
+    <ClCompile Include="libhv-master\base\herr.c" />
+    <ClCompile Include="libhv-master\base\hlog.c" />
+    <ClCompile Include="libhv-master\base\hmain.c" />
+    <ClCompile Include="libhv-master\base\hsocket.c" />
+    <ClCompile Include="libhv-master\base\htime.c" />
+    <ClCompile Include="libhv-master\base\hversion.c" />
+    <ClCompile Include="libhv-master\base\rbtree.c" />
+    <ClCompile Include="libhv-master\cpputil\hasync.cpp" />
+    <ClCompile Include="libhv-master\cpputil\hdir.cpp" />
+    <ClCompile Include="libhv-master\cpputil\hpath.cpp" />
+    <ClCompile Include="libhv-master\cpputil\hstring.cpp" />
+    <ClCompile Include="libhv-master\cpputil\hurl.cpp" />
+    <ClCompile Include="libhv-master\cpputil\ifconfig.cpp" />
+    <ClCompile Include="libhv-master\cpputil\iniparser.cpp" />
+    <ClCompile Include="libhv-master\cpputil\RAII.cpp" />
+    <ClCompile Include="libhv-master\cpputil\ThreadLocalStorage.cpp" />
+    <ClCompile Include="libhv-master\echo-servers\asio_echo.cpp" />
+    <ClCompile Include="libhv-master\echo-servers\libevent_echo.c" />
+    <ClCompile Include="libhv-master\echo-servers\libev_echo.c" />
+    <ClCompile Include="libhv-master\echo-servers\libhv_echo.c" />
+    <ClCompile Include="libhv-master\echo-servers\libuv_echo.c" />
+    <ClCompile Include="libhv-master\echo-servers\muduo_echo.cpp" />
+    <ClCompile Include="libhv-master\echo-servers\pingpong_client.cpp" />
+    <ClCompile Include="libhv-master\echo-servers\poco_echo.cpp" />
+    <ClCompile Include="libhv-master\event\epoll.c" />
+    <ClCompile Include="libhv-master\event\evport.c" />
+    <ClCompile Include="libhv-master\event\hevent.c" />
+    <ClCompile Include="libhv-master\event\hloop.c" />
+    <ClCompile Include="libhv-master\event\iocp.c" />
+    <ClCompile Include="libhv-master\event\kcp\hkcp.c" />
+    <ClCompile Include="libhv-master\event\kcp\ikcp.c" />
+    <ClCompile Include="libhv-master\event\kqueue.c" />
+    <ClCompile Include="libhv-master\event\nio.c" />
+    <ClCompile Include="libhv-master\event\nlog.c" />
+    <ClCompile Include="libhv-master\event\noevent.c" />
+    <ClCompile Include="libhv-master\event\overlapio.c" />
+    <ClCompile Include="libhv-master\event\poll.c" />
+    <ClCompile Include="libhv-master\event\rudp.c" />
+    <ClCompile Include="libhv-master\event\select.c" />
+    <ClCompile Include="libhv-master\event\unpack.c" />
+    <ClCompile Include="libhv-master\event\wepoll\wepoll.c" />
+    <ClCompile Include="libhv-master\evpp\EventLoopThreadPool_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\EventLoopThread_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\EventLoop_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\TcpClientEventLoop_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\TcpClient_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\TcpServer_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\TimerThread_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\UdpClient_test.cpp" />
+    <ClCompile Include="libhv-master\evpp\UdpServer_test.cpp" />
+    <ClCompile Include="libhv-master\examples\consul\consul.cpp" />
+    <ClCompile Include="libhv-master\examples\consul\main.cpp" />
+    <ClCompile Include="libhv-master\examples\curl.cpp" />
+    <ClCompile Include="libhv-master\examples\hloop_test.c" />
+    <ClCompile Include="libhv-master\examples\hmain_test.cpp" />
+    <ClCompile Include="libhv-master\examples\htimer_test.c" />
+    <ClCompile Include="libhv-master\examples\httpd\handler.cpp" />
+    <ClCompile Include="libhv-master\examples\httpd\httpd.cpp" />
+    <ClCompile Include="libhv-master\examples\httpd\router.cpp" />
+    <ClCompile Include="libhv-master\examples\http_client_test.cpp" />
+    <ClCompile Include="libhv-master\examples\http_server_test.cpp" />
+    <ClCompile Include="libhv-master\examples\jsonrpc\cJSON.c" />
+    <ClCompile Include="libhv-master\examples\jsonrpc\jsonrpc_client.c" />
+    <ClCompile Include="libhv-master\examples\jsonrpc\jsonrpc_server.c" />
+    <ClCompile Include="libhv-master\examples\mqtt\mqtt_client_test.cpp" />
+    <ClCompile Include="libhv-master\examples\mqtt\mqtt_pub.c" />
+    <ClCompile Include="libhv-master\examples\mqtt\mqtt_sub.c" />
+    <ClCompile Include="libhv-master\examples\multi-thread\multi-acceptor-processes.c" />
+    <ClCompile Include="libhv-master\examples\multi-thread\multi-acceptor-threads.c" />
+    <ClCompile Include="libhv-master\examples\multi-thread\one-acceptor-multi-workers.c" />
+    <ClCompile Include="libhv-master\examples\nc.c" />
+    <ClCompile Include="libhv-master\examples\nmap\main.cpp" />
+    <ClCompile Include="libhv-master\examples\nmap\nmap.cpp" />
+    <ClCompile Include="libhv-master\examples\protorpc\protorpc.c" />
+    <ClCompile Include="libhv-master\examples\protorpc\protorpc_client.cpp" />
+    <ClCompile Include="libhv-master\examples\protorpc\protorpc_server.cpp" />
+    <ClCompile Include="libhv-master\examples\socks5_proxy_server.c" />
+    <ClCompile Include="libhv-master\examples\tcp_chat_server.c" />
+    <ClCompile Include="libhv-master\examples\tcp_client_test.c" />
+    <ClCompile Include="libhv-master\examples\tcp_echo_server.c" />
+    <ClCompile Include="libhv-master\examples\tcp_proxy_server.c" />
+    <ClCompile Include="libhv-master\examples\tinyhttpd.c" />
+    <ClCompile Include="libhv-master\examples\tinyproxyd.c" />
+    <ClCompile Include="libhv-master\examples\udp_echo_server.c" />
+    <ClCompile Include="libhv-master\examples\udp_proxy_server.c" />
+    <ClCompile Include="libhv-master\examples\websocket_client_test.cpp" />
+    <ClCompile Include="libhv-master\examples\websocket_server_test.cpp" />
+    <ClCompile Include="libhv-master\examples\wget.cpp" />
+    <ClCompile Include="libhv-master\examples\wrk.cpp" />
+    <ClCompile Include="libhv-master\http\client\AsyncHttpClient.cpp" />
+    <ClCompile Include="libhv-master\http\client\HttpClient.cpp" />
+    <ClCompile Include="libhv-master\http\client\WebSocketClient.cpp" />
+    <ClCompile Include="libhv-master\http\Http1Parser.cpp" />
+    <ClCompile Include="libhv-master\http\Http2Parser.cpp" />
+    <ClCompile Include="libhv-master\http\httpdef.c" />
+    <ClCompile Include="libhv-master\http\HttpMessage.cpp" />
+    <ClCompile Include="libhv-master\http\HttpParser.cpp" />
+    <ClCompile Include="libhv-master\http\http_content.cpp" />
+    <ClCompile Include="libhv-master\http\http_parser.c" />
+    <ClCompile Include="libhv-master\http\multipart_parser.c" />
+    <ClCompile Include="libhv-master\http\server\FileCache.cpp" />
+    <ClCompile Include="libhv-master\http\server\HttpHandler.cpp" />
+    <ClCompile Include="libhv-master\http\server\HttpMiddleware.cpp" />
+    <ClCompile Include="libhv-master\http\server\HttpResponseWriter.cpp" />
+    <ClCompile Include="libhv-master\http\server\HttpServer.cpp" />
+    <ClCompile Include="libhv-master\http\server\HttpService.cpp" />
+    <ClCompile Include="libhv-master\http\server\http_page.cpp" />
+    <ClCompile Include="libhv-master\http\WebSocketChannel.cpp" />
+    <ClCompile Include="libhv-master\http\WebSocketParser.cpp" />
+    <ClCompile Include="libhv-master\http\websocket_parser.c" />
+    <ClCompile Include="libhv-master\http\wsdef.c" />
+    <ClCompile Include="libhv-master\mqtt\mqtt_client.c" />
+    <ClCompile Include="libhv-master\mqtt\mqtt_protocol.c" />
+    <ClCompile Include="libhv-master\protocol\dns.c" />
+    <ClCompile Include="libhv-master\protocol\ftp.c" />
+    <ClCompile Include="libhv-master\protocol\icmp.c" />
+    <ClCompile Include="libhv-master\protocol\smtp.c" />
+    <ClCompile Include="libhv-master\ssl\appletls.c" />
+    <ClCompile Include="libhv-master\ssl\gnutls.c" />
+    <ClCompile Include="libhv-master\ssl\hssl.c" />
+    <ClCompile Include="libhv-master\ssl\mbedtls.c" />
+    <ClCompile Include="libhv-master\ssl\nossl.c" />
+    <ClCompile Include="libhv-master\ssl\openssl.c" />
+    <ClCompile Include="libhv-master\ssl\wintls.c" />
+    <ClCompile Include="libhv-master\unittest\base64_test.c" />
+    <ClCompile Include="libhv-master\unittest\connect_test.c" />
+    <ClCompile Include="libhv-master\unittest\date_test.c" />
+    <ClCompile Include="libhv-master\unittest\defer_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\ftp_test.c" />
+    <ClCompile Include="libhv-master\unittest\hatomic_test.c" />
+    <ClCompile Include="libhv-master\unittest\hatomic_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\hbase_test.c" />
+    <ClCompile Include="libhv-master\unittest\hmutex_test.c" />
+    <ClCompile Include="libhv-master\unittest\hpath_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\hstring_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\hthread_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\hurl_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\ifconfig_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\listdir_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\md5_test.c" />
+    <ClCompile Include="libhv-master\unittest\mkdir_test.c" />
+    <ClCompile Include="libhv-master\unittest\nslookup_test.c" />
+    <ClCompile Include="libhv-master\unittest\objectpool_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\ping_test.c" />
+    <ClCompile Include="libhv-master\unittest\rbtree_test.c" />
+    <ClCompile Include="libhv-master\unittest\rmdir_test.c" />
+    <ClCompile Include="libhv-master\unittest\sendmail_test.c" />
+    <ClCompile Include="libhv-master\unittest\sha1_test.c" />
+    <ClCompile Include="libhv-master\unittest\sizeof_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\socketpair_test.c" />
+    <ClCompile Include="libhv-master\unittest\synchronized_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\threadpool_test.cpp" />
+    <ClCompile Include="libhv-master\unittest\webbench.c" />
+    <ClCompile Include="libhv-master\util\base64.c" />
+    <ClCompile Include="libhv-master\util\md5.c" />
+    <ClCompile Include="libhv-master\util\sha1.c" />
+    <ClCompile Include="mod_aliyun_tts.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\libs\unimrcp\libs\apr-toolkit\aprtoolkit.2015.vcxproj">
+      <Project>{13deeca0-bdd4-4744-a1a2-8eb0a44df3d2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\libs\win32\apr-util\libaprutil.2015.vcxproj">
+      <Project>{f057da7f-79e5-4b00-845c-ef446ef055e3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\libs\win32\apr\libapr.2015.vcxproj">
+      <Project>{f6c55d93-b927-4483-bb69-15aef3dd2dff}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\libs\win32\pthread\pthread.2015.vcxproj">
+      <Project>{df018947-0fff-4eb3-bdee-441dc81da7a4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\w32\Library\FreeSwitchCore.2015.vcxproj">
+      <Project>{202d7a4e-760d-4d0e-afa1-d7459ced30ff}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="compile.txt" />
+    <Text Include="阿里商用tts.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccessToken.hpp" />
+    <ClInclude Include="include\AsyncHttpClient.h" />
+    <ClInclude Include="include\axios.h" />
+    <ClInclude Include="include\base64.h" />
+    <ClInclude Include="include\Buffer.h" />
+    <ClInclude Include="include\Channel.h" />
+    <ClInclude Include="include\Event.h" />
+    <ClInclude Include="include\EventLoop.h" />
+    <ClInclude Include="include\EventLoopThread.h" />
+    <ClInclude Include="include\EventLoopThreadPool.h" />
+    <ClInclude Include="include\hasync.h" />
+    <ClInclude Include="include\hatomic.h" />
+    <ClInclude Include="include\hbase.h" />
+    <ClInclude Include="include\hbuf.h" />
+    <ClInclude Include="include\hconfig.h" />
+    <ClInclude Include="include\hdef.h" />
+    <ClInclude Include="include\hdir.h" />
+    <ClInclude Include="include\hendian.h" />
+    <ClInclude Include="include\herr.h" />
+    <ClInclude Include="include\hexport.h" />
+    <ClInclude Include="include\hfile.h" />
+    <ClInclude Include="include\hlog.h" />
+    <ClInclude Include="include\hloop.h" />
+    <ClInclude Include="include\hmain.h" />
+    <ClInclude Include="include\hmap.h" />
+    <ClInclude Include="include\hmath.h" />
+    <ClInclude Include="include\hmutex.h" />
+    <ClInclude Include="include\hobjectpool.h" />
+    <ClInclude Include="include\hpath.h" />
+    <ClInclude Include="include\hplatform.h" />
+    <ClInclude Include="include\hproc.h" />
+    <ClInclude Include="include\hscope.h" />
+    <ClInclude Include="include\hsocket.h" />
+    <ClInclude Include="include\hssl.h" />
+    <ClInclude Include="include\hstring.h" />
+    <ClInclude Include="include\hsysinfo.h" />
+    <ClInclude Include="include\hthread.h" />
+    <ClInclude Include="include\hthreadpool.h" />
+    <ClInclude Include="include\htime.h" />
+    <ClInclude Include="include\HttpClient.h" />
+    <ClInclude Include="include\HttpContext.h" />
+    <ClInclude Include="include\httpdef.h" />
+    <ClInclude Include="include\HttpMessage.h" />
+    <ClInclude Include="include\HttpParser.h" />
+    <ClInclude Include="include\HttpResponseWriter.h" />
+    <ClInclude Include="include\HttpServer.h" />
+    <ClInclude Include="include\HttpService.h" />
+    <ClInclude Include="include\http_content.h" />
+    <ClInclude Include="include\hurl.h" />
+    <ClInclude Include="include\hv.h" />
+    <ClInclude Include="include\hversion.h" />
+    <ClInclude Include="include\ifconfig.h" />
+    <ClInclude Include="include\iniparser.h" />
+    <ClInclude Include="include\json.hpp" />
+    <ClInclude Include="include\md5.h" />
+    <ClInclude Include="include\nlog.h" />
+    <ClInclude Include="include\requests.h" />
+    <ClInclude Include="include\sha1.h" />
+    <ClInclude Include="include\singleton.h" />
+    <ClInclude Include="include\Status.h" />
+    <ClInclude Include="include\TcpClient.h" />
+    <ClInclude Include="include\TcpServer.h" />
+    <ClInclude Include="include\ThreadLocalStorage.h" />
+    <ClInclude Include="include\UdpClient.h" />
+    <ClInclude Include="include\UdpServer.h" />
+    <ClInclude Include="include\WebSocketChannel.h" />
+    <ClInclude Include="include\WebSocketClient.h" />
+    <ClInclude Include="include\WebSocketParser.h" />
+    <ClInclude Include="include\WebSocketServer.h" />
+    <ClInclude Include="include\wsdef.h" />
+    <ClInclude Include="libhv-master\base\array.h" />
+    <ClInclude Include="libhv-master\base\hatomic.h" />
+    <ClInclude Include="libhv-master\base\hbase.h" />
+    <ClInclude Include="libhv-master\base\hbuf.h" />
+    <ClInclude Include="libhv-master\base\hdef.h" />
+    <ClInclude Include="libhv-master\base\heap.h" />
+    <ClInclude Include="libhv-master\base\hendian.h" />
+    <ClInclude Include="libhv-master\base\herr.h" />
+    <ClInclude Include="libhv-master\base\hlog.h" />
+    <ClInclude Include="libhv-master\base\hmain.h" />
+    <ClInclude Include="libhv-master\base\hmath.h" />
+    <ClInclude Include="libhv-master\base\hmutex.h" />
+    <ClInclude Include="libhv-master\base\hplatform.h" />
+    <ClInclude Include="libhv-master\base\hproc.h" />
+    <ClInclude Include="libhv-master\base\hsocket.h" />
+    <ClInclude Include="libhv-master\base\hsysinfo.h" />
+    <ClInclude Include="libhv-master\base\hthread.h" />
+    <ClInclude Include="libhv-master\base\htime.h" />
+    <ClInclude Include="libhv-master\base\hversion.h" />
+    <ClInclude Include="libhv-master\base\list.h" />
+    <ClInclude Include="libhv-master\base\netinet.h" />
+    <ClInclude Include="libhv-master\base\queue.h" />
+    <ClInclude Include="libhv-master\base\rbtree.h" />
+    <ClInclude Include="libhv-master\cpputil\hasync.h" />
+    <ClInclude Include="libhv-master\cpputil\hdir.h" />
+    <ClInclude Include="libhv-master\cpputil\hfile.h" />
+    <ClInclude Include="libhv-master\cpputil\hmap.h" />
+    <ClInclude Include="libhv-master\cpputil\hobjectpool.h" />
+    <ClInclude Include="libhv-master\cpputil\hpath.h" />
+    <ClInclude Include="libhv-master\cpputil\hscope.h" />
+    <ClInclude Include="libhv-master\cpputil\hstring.h" />
+    <ClInclude Include="libhv-master\cpputil\hthreadpool.h" />
+    <ClInclude Include="libhv-master\cpputil\hurl.h" />
+    <ClInclude Include="libhv-master\cpputil\ifconfig.h" />
+    <ClInclude Include="libhv-master\cpputil\iniparser.h" />
+    <ClInclude Include="libhv-master\cpputil\json.hpp" />
+    <ClInclude Include="libhv-master\cpputil\singleton.h" />
+    <ClInclude Include="libhv-master\cpputil\ThreadLocalStorage.h" />
+    <ClInclude Include="libhv-master\event\hevent.h" />
+    <ClInclude Include="libhv-master\event\hloop.h" />
+    <ClInclude Include="libhv-master\event\iowatcher.h" />
+    <ClInclude Include="libhv-master\event\kcp\hkcp.h" />
+    <ClInclude Include="libhv-master\event\kcp\ikcp.h" />
+    <ClInclude Include="libhv-master\event\nlog.h" />
+    <ClInclude Include="libhv-master\event\overlapio.h" />
+    <ClInclude Include="libhv-master\event\rudp.h" />
+    <ClInclude Include="libhv-master\event\unpack.h" />
+    <ClInclude Include="libhv-master\event\wepoll\wepoll.h" />
+    <ClInclude Include="libhv-master\evpp\Buffer.h" />
+    <ClInclude Include="libhv-master\evpp\Channel.h" />
+    <ClInclude Include="libhv-master\evpp\Event.h" />
+    <ClInclude Include="libhv-master\evpp\EventLoop.h" />
+    <ClInclude Include="libhv-master\evpp\EventLoopThread.h" />
+    <ClInclude Include="libhv-master\evpp\EventLoopThreadPool.h" />
+    <ClInclude Include="libhv-master\evpp\Status.h" />
+    <ClInclude Include="libhv-master\evpp\TcpClient.h" />
+    <ClInclude Include="libhv-master\evpp\TcpServer.h" />
+    <ClInclude Include="libhv-master\evpp\TimerThread.h" />
+    <ClInclude Include="libhv-master\evpp\UdpClient.h" />
+    <ClInclude Include="libhv-master\evpp\UdpServer.h" />
+    <ClInclude Include="libhv-master\examples\consul\consul.h" />
+    <ClInclude Include="libhv-master\examples\httpd\handler.h" />
+    <ClInclude Include="libhv-master\examples\httpd\router.h" />
+    <ClInclude Include="libhv-master\examples\jsonrpc\cJSON.h" />
+    <ClInclude Include="libhv-master\examples\jsonrpc\handler.h" />
+    <ClInclude Include="libhv-master\examples\jsonrpc\router.h" />
+    <ClInclude Include="libhv-master\examples\nmap\nmap.h" />
+    <ClInclude Include="libhv-master\examples\protorpc\handler\calc.h" />
+    <ClInclude Include="libhv-master\examples\protorpc\handler\handler.h" />
+    <ClInclude Include="libhv-master\examples\protorpc\handler\login.h" />
+    <ClInclude Include="libhv-master\examples\protorpc\protorpc.h" />
+    <ClInclude Include="libhv-master\examples\protorpc\router.h" />
+    <ClInclude Include="libhv-master\hconfig.h" />
+    <ClInclude Include="libhv-master\hexport.h" />
+    <ClInclude Include="libhv-master\http\client\AsyncHttpClient.h" />
+    <ClInclude Include="libhv-master\http\client\axios.h" />
+    <ClInclude Include="libhv-master\http\client\HttpClient.h" />
+    <ClInclude Include="libhv-master\http\client\requests.h" />
+    <ClInclude Include="libhv-master\http\client\WebSocketClient.h" />
+    <ClInclude Include="libhv-master\http\grpcdef.h" />
+    <ClInclude Include="libhv-master\http\Http1Parser.h" />
+    <ClInclude Include="libhv-master\http\http2def.h" />
+    <ClInclude Include="libhv-master\http\Http2Parser.h" />
+    <ClInclude Include="libhv-master\http\httpdef.h" />
+    <ClInclude Include="libhv-master\http\HttpMessage.h" />
+    <ClInclude Include="libhv-master\http\HttpParser.h" />
+    <ClInclude Include="libhv-master\http\http_content.h" />
+    <ClInclude Include="libhv-master\http\http_parser.h" />
+    <ClInclude Include="libhv-master\http\multipart_parser.h" />
+    <ClInclude Include="libhv-master\http\server\FileCache.h" />
+    <ClInclude Include="libhv-master\http\server\HttpContext.h" />
+    <ClInclude Include="libhv-master\http\server\HttpHandler.h" />
+    <ClInclude Include="libhv-master\http\server\HttpMiddleware.h" />
+    <ClInclude Include="libhv-master\http\server\HttpResponseWriter.h" />
+    <ClInclude Include="libhv-master\http\server\HttpServer.h" />
+    <ClInclude Include="libhv-master\http\server\HttpService.h" />
+    <ClInclude Include="libhv-master\http\server\http_page.h" />
+    <ClInclude Include="libhv-master\http\server\WebSocketServer.h" />
+    <ClInclude Include="libhv-master\http\WebSocketChannel.h" />
+    <ClInclude Include="libhv-master\http\WebSocketParser.h" />
+    <ClInclude Include="libhv-master\http\websocket_parser.h" />
+    <ClInclude Include="libhv-master\http\wsdef.h" />
+    <ClInclude Include="libhv-master\hv.h" />
+    <ClInclude Include="libhv-master\misc\grpc_server.h" />
+    <ClInclude Include="libhv-master\misc\win32_getopt.h" />
+    <ClInclude Include="libhv-master\mqtt\mqtt_client.h" />
+    <ClInclude Include="libhv-master\mqtt\mqtt_protocol.h" />
+    <ClInclude Include="libhv-master\protocol\dns.h" />
+    <ClInclude Include="libhv-master\protocol\ftp.h" />
+    <ClInclude Include="libhv-master\protocol\icmp.h" />
+    <ClInclude Include="libhv-master\protocol\smtp.h" />
+    <ClInclude Include="libhv-master\ssl\hssl.h" />
+    <ClInclude Include="libhv-master\util\base64.h" />
+    <ClInclude Include="libhv-master\util\md5.h" />
+    <ClInclude Include="libhv-master\util\sha1.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="compile.sh" />
+    <None Include="libhv-master\html\downloads\中文.html" />
+    <None Include="libhv-master\html\error.html" />
+    <None Include="libhv-master\html\EventSource.html" />
+    <None Include="libhv-master\html\index.html" />
+    <None Include="libhv-master\html\WebSocket.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="aliyun_tts.conf.xml" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{604C43C7-C8E7-450C-9EFD-2D1DD8879A2D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mod_aispeech</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>mod_aliyun_tts</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(PlatformName)\$(Configuration)\mod\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(PlatformName)\$(Configuration)\mod\</OutDir>
+    <IncludePath>$(SolutionDir)src/include;$(SolutionDir)libs\libhv-master\master\libhv\include\hv;D:\git\fs110\debian-linux-include;$(SolutionDir)libs\rapidjson\rapidjson-master\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)$(PlatformName)\$(Configuration)\mod\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(PlatformName)\$(Configuration)\mod\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MOD_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\unimrcp\libs\apr-toolkit\include;%(AdditionalIncludeDirectories);$(SolutionDir)libs\linux-include;$(SolutionDir)src\include;$(SolutionDir)src\mod\asr_tts\mod_aispeech\include;E:\git\fs1.6\fs16\libs\apr\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;MOD_EXPORTS;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>FreeSwitchCore.lib;libeay32.lib;opusd.lib;realTimeSdk.lib;ssleay32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../open/freeswitch/$(Platform)/$(Configuration);nlsSpeech-release\lib\win\$(Platform)\$(Configuration)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MOD_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;MOD_EXPORTS;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\..\open\freeswitch\src\include;..\..\utility\nlsSpeech-release\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../open/freeswitch/$(Platform)/$(Configuration);../../utility/nlsSpeech-release/lib/win/$(Platform)/$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>FreeSwitchCore.lib;ssleay32.lib;libeay32.lib;realTimeSdk.lib;opus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

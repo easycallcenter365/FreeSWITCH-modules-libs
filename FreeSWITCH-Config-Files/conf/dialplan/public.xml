@@ -1,0 +1,33 @@
+<!--
+    NOTICE:
+
+    This context is usually accessed via the external sip profile listening on port 5080.
+    
+    It is recommended to have separate inbound and outbound contexts.  Not only for security
+    but clearing up why you would need to do such a thing.  You don't want outside un-authenticated
+    callers hitting your default context which allows dialing calls thru your providers and results 
+    in Toll Fraud.
+-->
+
+<!-- http://wiki.freeswitch.org/wiki/Dialplan_XML -->
+<include>
+  <context name="public">
+	  
+   <extension name="inbound_acd"> 
+          <condition field="destination_number"  expression="^(\d{7,13})$" >
+              <action application="set" data="inherit_codec=true"/>
+              <action application="answer" />
+	          <action application="start_dtmf"/> 
+	          <action application="log" data="INFO inbound call:  ${uuid}  caller=${caller_id_number}, callee=$1 " />
+              <action application="set" data="continue_on_fail=true"/>
+              <action application="set" data="hangup_after_bridge=false"/>
+	          <action application="set" data="groupId=1"/>
+	          <action application="set" data="send_silence_when_idle=-1"/>
+              <action application="curl" data="http://127.0.0.1:8880/call-center/inboundProcessor?remote_video_port=${remote_video_port}&amp;local-media-port=${local_media_port}&amp;uuid=${uuid}&amp;caller=${caller_id_number}&amp;callee=$1&amp;load-test-uuid=${uuid}&amp;group-id=${groupId}"/>
+              <action application="park" />
+          </condition>
+      </extension>
+
+     
+  </context>
+</include>
