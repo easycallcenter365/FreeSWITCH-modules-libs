@@ -70,6 +70,7 @@ apt-get update && apt-get install -yq gnupg2 wget lsb-release
 ## 编译libhv
 
 ```bash
+cd  /home/freeswitch/freeswitch-1.10.11.-release/libs/libhv/
 apt-get -y install cmake
 mkdir build && cd build
 cmake .. -DWITH_OPENSSL=ON
@@ -180,15 +181,21 @@ a. 修改hosts文件
 
 b. 修改 switch.conf.xml
 vim /usr/local/freeswitchvideo/etc/freeswitch/autoload_configs/switch.conf.xml ， 在 `settings` 节点下增加配置：
+```xml
 <param name="core-db-dsn" value="mariadb://Server=easycallcenter365;Port=3306;Database=freeswitch;Uid=root;Pwd=easyCallcenter365Abc;" />
+```
 
 c. 修改 internal.xml
 vim /usr/local/freeswitchvideo/etc/freeswitch/sip_profiles/internal.xml ， 在 `settings` 节点下增加配置：
+```xml
 <param name="odbc-dsn" value="mariadb://Server=easycallcenter365;Port=3306;Database=freeswitch;Uid=root;Pwd=easyCallcenter365Abc;" />
+```
 
 d. 修改 external.xml
 vim /usr/local/freeswitchvideo/etc/freeswitch/sip_profiles/external.xml ， 在 `settings` 节点下增加配置：
+```xml
 <param name="odbc-dsn" value="mariadb://Server=easycallcenter365;Port=3306;Database=freeswitch;Uid=root;Pwd=easyCallcenter365Abc;" />
+```
 
 ## 启动FreeSWITCH
 
