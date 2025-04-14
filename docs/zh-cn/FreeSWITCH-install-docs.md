@@ -205,7 +205,9 @@ load mod_funasr      # 如果提示：Module mod_funasr Already Loaded! 说明�
 load mod_aliyun_tts  # 如果提示：Module mod_aliyun_tts Already Loaded! 说明加载成功
 ```
 
+## 语音识别和合成配置
 
+参考 [Set-up-ASR-TTS.md](Set-up-ASR-TTS.md)。
 
 
 
