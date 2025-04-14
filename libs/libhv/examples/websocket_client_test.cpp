@@ -27,7 +27,7 @@ public:
             // printf("response:\n%s\n", resp->Dump(true, true).c_str());
         };
         onmessage = [this](int opcode, const std::string& msg) {
-            printf("onmessage(type=%s len=%d): %.*s\n", opcode() == WS_OPCODE_TEXT ? "text" : "binary",
+            printf("onmessage(type=%s len=%d): %.*s\n", opcode == WS_OPCODE_TEXT ? "text" : "binary",
                 (int)msg.size(), (int)msg.size(), msg.data());
         };
         onclose = []() {
