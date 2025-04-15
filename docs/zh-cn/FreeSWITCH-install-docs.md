@@ -55,16 +55,19 @@ apt-get update && apt-get install -yq gnupg2 wget lsb-release
 		
 ## 编译FreeSWITCH
 
+开启 mariadb 和 curl 模块， vim modules.conf：
+```txt
+databases/mod_mariadb 
+databases/curl
+```
+去掉#号即可。
+
 ```bash
-    cd  /home/freeswitch/freeswitch-1.10.11.-release
-	# 开启 mariadb 和 curl 模块，
-	vim modules.conf  
-	# databases/mod_mariadb 去掉#号
-	# databases/curl 去掉#号
-    ./rebootstrap.sh -j
-    ./configure  --prefix=/usr/local/freeswitchvideo  
-    make -j 3
-    make install
+cd  /home/freeswitch/freeswitch-1.10.11.-release	
+./rebootstrap.sh -j
+./configure  --prefix=/usr/local/freeswitchvideo  
+make -j 3
+make install
 ```
 
 ## 编译libhv
@@ -165,6 +168,7 @@ cp /usr/local/unimrcp/lib/libunimrcpclient.so.0 /usr/local/apr/lib/libapr-1.so.0
   
 ```bash
 cp -r /home/easyCallcenter365/freeswitch-modules-libs/FreeSWITCH-Config-Files/conf/*  /usr/local/freeswitchvideo/etc/freeswitch/
+cp -r /home/easyCallcenter365/freeswitch-modules-libs/sounds/*  /usr/local/freeswitchvideo/share/freeswitch/sounds/
 rm -rf /usr/local/freeswitchvideo/etc/freeswitch/sip_profiles/*ipv6*
 ```
 
@@ -206,7 +210,11 @@ vim /usr/local/freeswitchvideo/etc/freeswitch/sip_profiles/external.xml ， 在 
     LANGUAGE=zh_CN.UTF-8    
 ```	
 
-如果不设置，会导致语音合成异常。
+如果不设置，会导致语音合成异常。让配置立即生效：
+
+```bash
+source ~/.profile
+```	
 
 ## 启动FreeSWITCH
 
