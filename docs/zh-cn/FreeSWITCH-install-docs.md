@@ -197,6 +197,17 @@ vim /usr/local/freeswitchvideo/etc/freeswitch/sip_profiles/external.xml ， 在 
 <param name="odbc-dsn" value="mariadb://Server=easycallcenter365;Port=3306;Database=freeswitch;Uid=root;Pwd=easyCallcenter365Abc;" />
 ```
 
+## 设置Debian12的中文支持
+
+解决乱码问题： vim ~/.profile  追加配置：
+
+```bash
+    LANG=zh_CN.UTF-8
+    LANGUAGE=zh_CN.UTF-8    
+```	
+
+如果不设置，会导致语音合成异常。
+
 ## 启动FreeSWITCH
 
 所有参数设置好之后，尝试启动 `FreeSWITCH` 。
