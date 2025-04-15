@@ -206,8 +206,8 @@ vim /usr/local/freeswitchvideo/etc/freeswitch/sip_profiles/external.xml ， 在 
 解决乱码问题： vim ~/.profile  追加配置：
 
 ```bash
-    LANG=zh_CN.UTF-8
-    LANGUAGE=zh_CN.UTF-8    
+LANG=zh_CN.UTF-8
+LANGUAGE=zh_CN.UTF-8    
 ```	
 
 如果不设置，会导致语音合成异常。让配置立即生效：
