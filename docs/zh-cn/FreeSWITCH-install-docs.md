@@ -14,16 +14,16 @@ unzip -d /home/freeswitch  freeswitch-1.10.11.-release.zip
 ## download FreeSWITCH mods for easyCallcenter365
 
 ```bash
-   mkdir /home/easyCallcenter365
-   cd /home/easyCallcenter365
-   git clone https://gitee.com/easycallcenter365/freeswitch-modules-libs.git
+mkdir /home/easyCallcenter365
+cd /home/easyCallcenter365
+git clone https://gitee.com/easycallcenter365/freeswitch-modules-libs.git
 ```
 
 ## 合并代码
 
 ```bash
- cp -r /home/easyCallcenter365/freeswitch-modules-libs/src/*  /home/freeswitch/freeswitch-1.10.11.-release/src/
- cp -r /home/easyCallcenter365/freeswitch-modules-libs/libs/*  /home/freeswitch/freeswitch-1.10.11.-release/libs/
+cp -r /home/easyCallcenter365/freeswitch-modules-libs/src/*  /home/freeswitch/freeswitch-1.10.11.-release/src/
+cp -r /home/easyCallcenter365/freeswitch-modules-libs/libs/*  /home/freeswitch/freeswitch-1.10.11.-release/libs/
 ```    
  
     	
@@ -44,13 +44,13 @@ apt-get update && apt-get install -yq gnupg2 wget lsb-release
 ## 设置FreeSWITCH的apt源
 
 ```bash
-    wget --http-user=signalwire --http-password=$TOKEN -O /usr/share/keyrings/signalwire-freeswitch-repo.gpg https://freeswitch.signalwire.com/repo/deb/debian-release/signalwire-freeswitch-repo.gpg
-    echo "machine freeswitch.signalwire.com login signalwire password $TOKEN" > /etc/apt/auth.conf
-    chmod 600 /etc/apt/auth.conf
-    echo "deb [signed-by=/usr/share/keyrings/signalwire-freeswitch-repo.gpg] https://freeswitch.signalwire.com/repo/deb/debian-release/ `lsb_release -sc` main" > /etc/apt/sources.list.d/freeswitch.list
-    echo "deb-src [signed-by=/usr/share/keyrings/signalwire-freeswitch-repo.gpg] https://freeswitch.signalwire.com/repo/deb/debian-release/ `lsb_release -sc` main" >> /etc/apt/sources.list.d/freeswitch.list
-    apt-get update
-    apt-get build-dep freeswitch
+wget --http-user=signalwire --http-password=$TOKEN -O /usr/share/keyrings/signalwire-freeswitch-repo.gpg https://freeswitch.signalwire.com/repo/deb/debian-release/signalwire-freeswitch-repo.gpg
+echo "machine freeswitch.signalwire.com login signalwire password $TOKEN" > /etc/apt/auth.conf
+chmod 600 /etc/apt/auth.conf
+echo "deb [signed-by=/usr/share/keyrings/signalwire-freeswitch-repo.gpg] https://freeswitch.signalwire.com/repo/deb/debian-release/ `lsb_release -sc` main" > /etc/apt/sources.list.d/freeswitch.list
+echo "deb-src [signed-by=/usr/share/keyrings/signalwire-freeswitch-repo.gpg] https://freeswitch.signalwire.com/repo/deb/debian-release/ `lsb_release -sc` main" >> /etc/apt/sources.list.d/freeswitch.list
+apt-get update
+apt-get build-dep freeswitch
 ```
 		
 ## 编译FreeSWITCH
